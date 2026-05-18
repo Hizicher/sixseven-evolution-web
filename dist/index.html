@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>6-7 Evolution</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+    }
+
+    canvas {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+    }
+  </style>
+<link rel="modulepreload" href="/sixseven-evolution-cf631581aaf69b86.js" crossorigin="anonymous" integrity="sha384-ZgZxe+vI6XCaqzsID1Ei9tTnbTkl+dpQxLQwrfd89PZlD3+lSwA5SapfZp7JMEwr"><link rel="preload" href="/sixseven-evolution-cf631581aaf69b86_bg.wasm" crossorigin="anonymous" integrity="sha384-delGZdWAWeBFAnX252alnthE1+MJldLMMe7spQfsdmetwmfll0Yz9D30jCReI9hY" as="fetch" type="application/wasm"></head>
+
+<body>
+  <canvas id="bevy"></canvas>
+  
+<script type="module">
+import init, * as bindings from '/sixseven-evolution-cf631581aaf69b86.js';
+const wasm = await init({ module_or_path: '/sixseven-evolution-cf631581aaf69b86_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+</body>
+</html>
